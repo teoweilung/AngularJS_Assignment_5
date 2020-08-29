@@ -1,0 +1,20 @@
+<div class="container signup">
+  <h2 id="signup-title" class="text-center">My Info</h2>
+  <div class="text-center">
+    View your registered information here
+  </div>
+
+  <br>
+  <div ng-if="!myInfoCtrl.isUserNotSignedUp()" class="login-error text-center">
+    {{ myInfoCtrl.user.firstname }}
+    {{ myInfoCtrl.user.lastname }}
+    {{ myInfoCtrl.user.email }}
+    {{ myInfoCtrl.user.phone }}
+    {{ myInfoCtrl.user.favouritedish}}
+  </div>
+
+  <br>
+  <div ng-if="myInfoCtrl.isUserNotSignedUp()" class="login-error text-center">
+    You have not signed up yet!
+  </div>
+</div>

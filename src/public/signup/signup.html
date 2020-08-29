@@ -1,0 +1,59 @@
+<div class="container signup">
+  <h2 id="signup-title" class="text-center">Sign Up</h2>
+  <div class="text-center">
+    Sign up for an account here and indicate your favourite dish for special discounts!
+  </div>
+  <br>
+  <div>
+    <fieldset>
+        <form name="signUpForm" novalidate>
+          <input type="text" name="firstname" placeholder="Your first name"
+                  ng-model="signUpCtrl.firstname" required>
+                  {{ signUpCtrl.firstname }}
+          <span
+            ng-if="(signUpForm.firstname.$error.required) && signUpForm.firstname.$touched">
+            First name is required
+          </span>
+          <br>
+          <input type="text" name="lastname" placeholder="Your last name"
+                  ng-model="signUpCtrl.lastname" required>
+                  {{ signUpCtrl.lastname }}
+          <span
+            ng-if="(signUpForm.lastname.$error.required) && signUpForm.lastname.$touched">
+            Last name is required
+          </span>
+          <br>
+          <input type="email" name="email" placeholder="Your email address"
+                  ng-model="signUpCtrl.email" required>
+                  {{ signUpCtrl.email }}
+          <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+          <input type="text" name="phone" placeholder="Your phone number ########"
+                  ng-model="signUpCtrl.phone" pattern="(\d{8})" required>
+                  {{ signUpCtrl.phone }}
+          <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+            Phone must be in the format ########.
+          </span>
+          <br>
+          <input type="text" name="favouritedish" placeholder="Favourite dish"
+                  ng-model="signUpCtrl.favouritedish" required>
+                  {{ signUpCtrl.favouritedish }}
+          <span ng-if="signUpForm.favouritedish.$error.required && signUpForm.favouritedish.$touched">
+            Favourite Dish is required
+          </span>
+          <br>
+
+          <button
+            ng-disabled="signUpForm.$invalid"
+            ng-click="signUpCtrl.submit()">Submit</button>
+        </form>
+    </fieldset>
+  </div>
+
+  <div ng-if="signUpCtrl.resultmsg" class="login-error text-center">
+    {{signUpCtrl.resultmsg}}
+  </div>
+
+</div>

@@ -114,6 +114,13 @@ h3.menu-item-title {
 /* END SINGLE CATEGORY PAGE */
 
 
+/* SIGN UP PAGE */
+.signup input {
+  color: black;
+}
+/* END SIGN UP PAGE */
+
+
 /********** Large devices only **********/
 @media (min-width: 1200px) {
   .container .jumbotron {
